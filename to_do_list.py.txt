@@ -1,0 +1,44 @@
+def start():
+  list=[]
+  list_size=int(input("How many tasks do you want to add?"))
+  for i in range(1,list_size+1):
+    tasks=input(f"Enter {i} task : ")
+    list.append(tasks)
+  print(list)
+  while True:
+    print("1. Add a task")
+    print("2. Remove a task")
+    print(" 3. Update a task")
+    print("4. View all tasks")
+    print("5. Quit")
+    choice=int(input("Enter your choice: "))
+    if choice==1:
+      new_task=input("Enter the new task: ")
+      list.append(new_task)
+      print(f" {new_task} Task added successfully")
+    elif choice==2:
+       removetask=input("Enter the task you want to remove: ")
+       if removetask in list:
+         list.remove(removetask)
+         print(f"{removetask} task removed successfully")
+       else:
+         print("Task not found")
+    elif choice==3:
+      update_task=input("Enter the task you want to update: ")
+      if update_task in list:
+        new_task=input("Enter the new task: ")
+        index=list.index(update_task)
+        list[index]=new_task
+        print(f"{update_task} task updated successfully")
+      else:
+        print("Task not found")
+    elif choice==4:
+      print("Tasks:")
+      for task in list:
+        print(task)
+    elif choice==5:
+      print("Goodbye")
+      break
+start()
+      
+      
